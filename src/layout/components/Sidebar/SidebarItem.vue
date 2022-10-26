@@ -2,7 +2,7 @@
   <el-sub-menu :index="route.path" v-if="route.children.length > 0">
     <template #title>
       <svg-icon :icon="route.meta?.icon"></svg-icon>
-      <span>{{ route.meta.title }}</span>
+      <span>{{ generatetitle(route.meta.title) }}</span>
     </template>
     <SidebarItem
       v-for="child in route.children"
@@ -12,11 +12,12 @@
   </el-sub-menu>
   <el-menu-item :index="route.path" v-else>
     <svg-icon :icon="route.meta?.icon"></svg-icon>
-    <span>{{ route.meta.title }}</span>
+    <span>{{ generatetitle(route.meta.title) }}</span>
   </el-menu-item>
 </template>
 <script lang="ts" setup>
 import { defineProps } from 'vue'
+import { generatetitle } from '@/utils/i18n'
 defineProps({
   route: {
     type: Object,

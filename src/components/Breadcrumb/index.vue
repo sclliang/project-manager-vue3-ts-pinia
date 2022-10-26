@@ -8,18 +8,19 @@
         :to="item.path"
       >
         <span class="no-redirect" v-if="index === BreadcrumData.length - 1">{{
-          item.meta.title
+          generatetitle(item.meta.title)
         }}</span>
-        <span v-else>{{ item.meta.title }}</span>
+        <span v-else>{{ generatetitle(item.meta.title) }}</span>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
 </template>
 <script lang="ts" setup>
 import { watch, ref } from 'vue'
-import { RouteLocationMatched, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
+import { generatetitle } from '@/utils/i18n'
 const route = useRoute()
-const BreadcrumData = ref<RouteLocationMatched[]>([])
+const BreadcrumData = ref<any[]>([])
 
 // 获取当前路由的完整路由表，包括上级路由
 const getBreadcrumData = () => {

@@ -7,6 +7,9 @@
       <div class="title"><Breadcrunb></Breadcrunb></div>
     </div>
     <div class="right-menu">
+      <div>
+        <lang-select class="right-menu-item hover-effect"></lang-select>
+      </div>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <el-avatar
@@ -19,7 +22,9 @@
         <template #dropdown>
           <el-dropdown-menu class="user-dropdown">
             <router-link to="/"
-              ><el-dropdown-item>主页</el-dropdown-item></router-link
+              ><el-dropdown-item>{{
+                $t('msg.navBar.home')
+              }}</el-dropdown-item></router-link
             >
             <a
               href="https://github.com/sclliang/project-manager-vue3-ts-pinia.git"
@@ -27,9 +32,9 @@
             >
               <el-dropdown-item>gitHub</el-dropdown-item></a
             >
-            <el-dropdown-item divided @click="onHandleLogoutClock"
-              >退出登录</el-dropdown-item
-            ></el-dropdown-menu
+            <el-dropdown-item divided @click="onHandleLogoutClock">{{
+              $t('msg.navBar.logout')
+            }}</el-dropdown-item></el-dropdown-menu
           >
         </template>
       </el-dropdown>
@@ -41,7 +46,7 @@ import UserStore from '@/store/user'
 import AppStore from '@/store/app'
 import { computed } from 'vue'
 import Breadcrunb from '@/components/Breadcrumb'
-
+import LangSelect from '@/components/LangSelect'
 const store = UserStore()
 const appStore = AppStore()
 /**
@@ -75,6 +80,16 @@ const toggleClick = () => {
       cursor: pointer;
       .el-avatar {
         margin-right: 12px;
+      }
+    }
+    :deep(.right-menu-item) {
+      display: inline-block;
+      padding: 0 18px 0 0;
+      font-size: 24px;
+      color: #5a5e66;
+      vertical-align: text-bottom;
+      &.hover-effect {
+        cursor: pointer;
       }
     }
   }

@@ -28,6 +28,7 @@ module.exports = defineConfig({
   },
   chainWebpack(config) {
     // 设置 svg-sprite-loader
+    config.resolve.alias.set('vue-i18n', 'vue-i18n/dist/vue-i18n.cjs.js')
     config.module.rule('svg').exclude.add(resolve('src/icons')).end()
     config.module
       .rule('icons')

@@ -8,7 +8,8 @@
     >
       <!-- 标题 -->
       <div class="title-container">
-        <h3 class="title">用户登录</h3>
+        <h3 class="title">{{ $t('msg.login.title') }}</h3>
+        <lang-select effects="light" class="lang"></lang-select>
       </div>
       <!-- 用户名 -->
       <el-form-item prop="username">
@@ -45,8 +46,9 @@
         style="width: 100%; margin-bottom: 30px"
         @click="onhandleLogin"
         :loading="loading"
-        >登录</el-button
+        >{{ $t('msg.login.loginBtn') }}</el-button
       >
+      <div class="tips" v-html="$t('msg.login.desc')"></div>
     </el-form>
   </div>
 </template>
@@ -56,9 +58,12 @@ import type { FormInstance, FormRules } from 'element-plus'
 import { validatePassword } from './rules'
 import type { IUserInfo } from '@/types/login'
 import UserStore from '@/store/user'
+import LangSelect from '@/components/LangSelect'
+import { useI18n } from 'vue-i18n'
 // 是否显示密码
 const showPwd = ref(false)
 // 用户名密码
+const i18n = useI18n()
 
 const userInfo = ref<IUserInfo>({
   username: 'super-admin',
@@ -74,17 +79,13 @@ const ruler = ref<FormRules>({
   username: [
     {
       required: true,
-      message: '用户名不能为空',
+      message: i18n.t('msg.login.usernameRule'),
       trigger: 'blur'
     }
   ],
   password: [
     {
       required: true,
-      message: '密码不能为空',
-      trigger: 'blur'
-    },
-    {
       trigger: 'blur',
       validator: validatePassword()
     }
@@ -168,6 +169,16 @@ $cursor: #fff;
       text-align: center;
       font-weight: bold;
     }
+    .lang {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 26px;
+      color: #fff;
+      background: #fff;
+      border-radius: 4px;
+      padding: 4px;
+    }
   }
 
   .show-pwd {
@@ -177,6 +188,9 @@ $cursor: #fff;
     color: $dark_gray;
     cursor: pointer;
     user-select: none;
+  }
+  .tips {
+    color: #fff;
   }
 }
 </style>
