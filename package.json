@@ -11,10 +11,12 @@
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.1.3",
     "core-js": "^3.8.3",
+    "css-color-function": "^1.3.3",
     "element-plus": "^2.2.19",
     "md5": "^2.3.0",
     "path-browserify": "^1.0.1",
     "pinia": "^2.0.23",
+    "rgb-hex": "^4.0.0",
     "vue": "^3.2.13",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.3"

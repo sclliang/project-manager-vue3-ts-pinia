@@ -2,7 +2,7 @@
   <div>
     <el-menu
       :unique-opened="true"
-      :background-color="variables.menuBg"
+      :background-color="themeStore.mainColor"
       :text-color="variables.menuText"
       :active-text-color="variables.menuActiveText"
       router
@@ -24,6 +24,8 @@ import { filterRouters, generateMenus } from '@/utils/route'
 import variables from '@/styles/variables.module.scss'
 import SidebarItem from './SidebarItem.vue'
 import AppStore from '@/store/app'
+import ThemeStore from '@/store/theme'
+const themeStore = ThemeStore()
 const store = AppStore()
 const router = useRouter()
 const routes = computed(() => {

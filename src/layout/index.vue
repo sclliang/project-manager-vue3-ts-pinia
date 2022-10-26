@@ -5,7 +5,7 @@
   >
     <Sidebar
       class="sidebar-container"
-      :style="{ backgroundColor: variables.menuBg }"
+      :style="{ backgroundColor: themeStore.mainColor }"
     ></Sidebar>
     <div class="main-container">
       <div class="fixed-header">
@@ -19,9 +19,10 @@
 import Sidebar from './components/Sidebar'
 import AppMain from './components/AppMain.vue'
 import Navbar from './components/Navbar.vue'
-import variables from '@/styles/variables.module.scss'
 import AppStore from '@/store/app'
+import ThemeStore from '@/store/theme'
 const appStore = AppStore()
+const themeStore = ThemeStore()
 </script>
 <style lang="scss" scoped>
 @import '~@/styles/mixin.scss';

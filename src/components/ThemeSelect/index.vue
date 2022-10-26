@@ -18,11 +18,16 @@
       </el-dropdown-menu>
     </template>
   </el-dropdown>
-  <div></div>
+  <div>
+    <SelectColor v-model="selectColorVisible"></SelectColor>
+  </div>
 </template>
 <script lang="ts" setup>
-const handleSetTheme = (color: string) => {
-  console.log(color)
+import { ref } from 'vue'
+import SelectColor from './SelectColor.vue'
+const handleSetTheme = () => {
+  selectColorVisible.value = true
 }
+const selectColorVisible = ref(false)
 </script>
 <style lang="scss" scoped></style>

@@ -8,6 +8,9 @@
     </div>
     <div class="right-menu">
       <div>
+        <ThemeSelect class="right-menu-item hover-effect"></ThemeSelect>
+      </div>
+      <div>
         <lang-select class="right-menu-item hover-effect"></lang-select>
       </div>
       <el-dropdown class="avatar-container" trigger="click">
@@ -47,6 +50,7 @@ import AppStore from '@/store/app'
 import { computed } from 'vue'
 import Breadcrunb from '@/components/Breadcrumb'
 import LangSelect from '@/components/LangSelect'
+import ThemeSelect from '@/components/ThemeSelect'
 const store = UserStore()
 const appStore = AppStore()
 /**
