@@ -13,11 +13,13 @@
     "core-js": "^3.8.3",
     "element-plus": "^2.2.19",
     "md5": "^2.3.0",
+    "path-browserify": "^1.0.1",
     "pinia": "^2.0.23",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@types/node": "^18.11.5",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",

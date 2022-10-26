@@ -7,6 +7,10 @@ router.beforeEach((to) => {
   if (store.token) {
     if (to.path === '/login') {
       return '/'
+    } else {
+      if (!store.userInfo.username) {
+        store.getUserInfo()
+      }
     }
   } else {
     if (whiteList.indexOf(to.path) > -1) {
