@@ -8,6 +8,9 @@
     </div>
     <div class="right-menu">
       <div>
+        <screen-full class="right-menu-item hover-effect"></screen-full>
+      </div>
+      <div>
         <ThemeSelect class="right-menu-item hover-effect"></ThemeSelect>
       </div>
       <div>
@@ -51,6 +54,7 @@ import { computed } from 'vue'
 import Breadcrunb from '@/components/Breadcrumb'
 import LangSelect from '@/components/LangSelect'
 import ThemeSelect from '@/components/ThemeSelect'
+import ScreenFull from '@/components/ScreenFull'
 const store = UserStore()
 const appStore = AppStore()
 /**
