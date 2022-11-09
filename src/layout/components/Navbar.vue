@@ -8,6 +8,9 @@
     </div>
     <div class="right-menu">
       <div>
+        <header-search class="right-menu-item hover-effect"></header-search>
+      </div>
+      <div>
         <screen-full class="right-menu-item hover-effect"></screen-full>
       </div>
       <div>
@@ -55,6 +58,7 @@ import Breadcrunb from '@/components/Breadcrumb'
 import LangSelect from '@/components/LangSelect'
 import ThemeSelect from '@/components/ThemeSelect'
 import ScreenFull from '@/components/ScreenFull'
+import HeaderSearch from '@/components/HeaderSearch/index.vue'
 const store = UserStore()
 const appStore = AppStore()
 /**
